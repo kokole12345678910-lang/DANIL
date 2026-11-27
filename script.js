@@ -28,7 +28,7 @@ for (let i = 0; i < 22; i++) {
 
 // 2. Confetti burst helper
 function spawnConfetti(x, y, count = 16) {
-  const icons = ['💖', '✨', '🔮', '💜', '🌟', '🫂'];
+  const icons = ['💖', '✨', '🔮', '💜', '🌟', '🤗'];
   for (let i = 0; i < count; i++) {
     const piece = document.createElement('span');
     piece.className = 'confetti-piece';
@@ -90,7 +90,7 @@ document.querySelectorAll('.tarot-card').forEach((card) => {
 const dailyDeck = [
   {
     arcana: 'Аркан «Обнимашки без повода»',
-    emoji: '🫂',
+    emoji: '🤗',
     title: 'Срочный сеанс нежности',
     text: 'Сегодня по раскладу положено минимум 10 крепких обнимашек и один внезапный поцелуй в носик.'
   },
