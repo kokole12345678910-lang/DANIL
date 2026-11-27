@@ -1,0 +1,570 @@
+:root {
+  --bg: #fff8fc;
+  --bg-alt: #f7efff;
+  --surface: #ffffff;
+  --plum: #3b1d5e;
+  --plum-soft: #684691;
+  --pink: #ff5c93;
+  --pink-soft: #ffe0ec;
+  --lavender: #b983ff;
+  --gold: #f5b700;
+  --text: #2c1644;
+  --muted: #6c5685;
+  --shadow: 0 14px 35px rgba(84, 34, 130, 0.12);
+  --radius: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top left, #ffe7f3 0%, var(--bg) 45%, #efe3ff 100%);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1060px, 92%);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating background symbols */
+.floating-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.float-item {
+  position: absolute;
+  opacity: 0.25;
+  animation: floatUp linear infinite;
+  user-select: none;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(105vh) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.28;
+  }
+  85% {
+    opacity: 0.28;
+  }
+  100% {
+    transform: translateY(-15vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: fixed;
+  font-size: 1.4rem;
+  pointer-events: none;
+  animation: burst 1.2s ease-out forwards;
+}
+
+@keyframes burst {
+  0% {
+    transform: translate(0, 0) scale(0.6) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(1.25) rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+/* Hero */
+.hero {
+  padding: 5.5rem 0 4rem;
+  text-align: center;
+}
+
+.arcana-pill {
+  display: inline-block;
+  background: linear-gradient(135deg, #fff0f6, #efe1ff);
+  border: 2px solid rgba(185, 131, 255, 0.45);
+  color: var(--plum);
+  font-weight: 800;
+  font-size: 0.92rem;
+  padding: 0.45rem 1.15rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(185, 131, 255, 0.2);
+  margin-bottom: 1.4rem;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem 0.85rem;
+}
+
+.name-dan {
+  color: var(--plum);
+}
+
+.name-ira {
+  color: var(--pink);
+}
+
+.taro-tag {
+  font-family: 'Caveat', cursive;
+  font-size: 1.18em;
+  background: linear-gradient(135deg, #7b2cbf, #ff5c93);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heart-beat {
+  display: inline-block;
+  animation: heartbeat 1.4s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.22); }
+  45% { transform: scale(0.95); }
+  65% { transform: scale(1.15); }
+}
+
+.hero-subtitle {
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  font-size: 1.12rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.95rem 1.7rem;
+  font-family: inherit;
+  font-size: 1.02rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--pink), #ff85b3);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(255, 92, 147, 0.35);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #6d32b8, #9d4edd);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(109, 50, 184, 0.28);
+}
+
+.hug-counter-box {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+  border: 2px dashed rgba(255, 92, 147, 0.45);
+  padding: 0.85rem 1.5rem;
+  border-radius: 18px;
+  font-size: 0.98rem;
+  color: var(--plum);
+}
+
+.hug-status {
+  font-size: 0.88rem;
+  color: var(--pink);
+  font-weight: 700;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background: rgba(243, 231, 255, 0.55);
+  border-top: 1px solid rgba(185, 131, 255, 0.22);
+  border-bottom: 1px solid rgba(185, 131, 255, 0.22);
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.65rem, 3.5vw, 2.3rem);
+  font-weight: 900;
+  color: var(--plum);
+  margin-bottom: 0.5rem;
+}
+
+.section-desc {
+  text-align: center;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+}
+
+/* Tarot Spread */
+.spread-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.8rem;
+}
+
+.tarot-card {
+  perspective: 1200px;
+  height: 360px;
+  cursor: pointer;
+  outline: none;
+}
+
+.tarot-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+}
+
+.tarot-card[data-flipped="true"] .tarot-card-inner {
+  transform: rotateY(180deg);
+}
+
+.tarot-front,
+.tarot-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  padding: 12px;
+  box-shadow: var(--shadow);
+}
+
+.tarot-front {
+  background: linear-gradient(155deg, #3b1d5e, #5a2887 60%, #7b2cbf);
+  color: #fff;
+}
+
+.tarot-front:hover {
+  filter: brightness(1.06);
+}
+
+.tarot-back {
+  background: linear-gradient(155deg, #fff, #fff2f8);
+  color: var(--text);
+  transform: rotateY(180deg);
+}
+
+.card-border {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(245, 183, 0, 0.65);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.4rem;
+}
+
+.back-border {
+  border-color: rgba(255, 92, 147, 0.45);
+}
+
+.card-corner {
+  position: absolute;
+  font-size: 1.05rem;
+}
+
+.top-left { top: 10px; left: 12px; }
+.top-right { top: 10px; right: 12px; }
+.bottom-left { bottom: 10px; left: 12px; }
+.bottom-right { bottom: 10px; right: 12px; }
+
+.card-emblem {
+  font-size: 3.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.card-label {
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 1.15rem;
+  color: #ffe08a;
+}
+
+.card-hint {
+  margin-top: 0.45rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.arcana-num {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--pink);
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.card-emoji {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.tarot-back h3 {
+  font-size: 1.25rem;
+  color: var(--plum);
+  margin-bottom: 0.55rem;
+}
+
+.tarot-back p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Daily Oracle */
+.oracle-box {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2.2rem;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.mini-badge {
+  display: inline-block;
+  background: var(--pink-soft);
+  color: var(--pink);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 0.9rem;
+}
+
+.oracle-left h2 {
+  font-size: 1.75rem;
+  color: var(--plum);
+  margin-bottom: 0.65rem;
+}
+
+.oracle-left p {
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+
+.daily-card {
+  background: linear-gradient(155deg, #3f1d68, #6b2fa0);
+  color: #fff;
+  border-radius: 20px;
+  padding: 1.8rem 1.5rem;
+  text-align: center;
+  border: 2px solid rgba(245, 183, 0, 0.7);
+  box-shadow: 0 12px 26px rgba(63, 29, 104, 0.25);
+  transition: transform 0.25s ease;
+}
+
+.daily-card.pop {
+  transform: scale(1.04);
+}
+
+.daily-card-arcana {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffe08a;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+}
+
+.daily-card-emoji {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.daily-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.daily-card-text {
+  font-size: 0.95rem;
+  color: #f3e8ff;
+}
+
+/* Compatibility Meter */
+.meter-card {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2.2rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.meter-names {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--plum);
+  margin-bottom: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.meter-plus {
+  color: var(--pink);
+  font-size: 1.5rem;
+}
+
+.meter-bar-wrap {
+  width: 100%;
+  height: 24px;
+  background: #f2e8ff;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  border: 2px solid rgba(185, 131, 255, 0.35);
+}
+
+.meter-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff5c93, #b983ff, #f5b700);
+  border-radius: 999px;
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.meter-result {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--plum-soft);
+  margin-bottom: 1.4rem;
+  min-height: 1.7rem;
+}
+
+/* Facts Grid */
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+
+.fact-card {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 1.6rem;
+  box-shadow: 0 10px 25px rgba(84, 34, 130, 0.08);
+  border: 1px solid rgba(185, 131, 255, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.fact-card:hover {
+  transform: translateY(-5px);
+}
+
+.fact-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.fact-card h3 {
+  font-size: 1.1rem;
+  color: var(--plum);
+  margin-bottom: 0.45rem;
+}
+
+.fact-card p {
+  font-size: 0.94rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2.5rem 0 3rem;
+  color: var(--muted);
+}
+
+.footer-note {
+  font-weight: 800;
+  color: var(--plum);
+  margin-bottom: 0.3rem;
+}
+
+.footer-sub {
+  font-size: 0.88rem;
+}
+
+@media (max-width: 768px) {
+  .oracle-box {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Данильчик ❤️ Ирочка ТАРОшница</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="floating-bg" id="floatingBg" aria-hidden="true"></div>
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="arcana-pill">✨ Старший Аркан: Вечная Милота ✨</div>
+      <h1 class="hero-title">
+        <span class="name-dan">Данильчик</span>
+        <span class="heart-beat" role="img" aria-label="любовь">💖</span>
+        <span class="name-ira">Ирочка <span class="taro-tag">ТАРОшница</span></span>
+      </h1>
+      <p class="hero-subtitle">
+        Официальный мистико-романтический портал. Карты легли идеально, звёзды в шоке,
+        а Вселенная просто поставила лайк этой парочке 🔮🌙
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" id="hugBtn">
+          <span>Отправить обнимашку</span>
+          <span class="btn-emoji">🫂</span>
+        </button>
+        <a href="#tarot-spread" class="btn btn-secondary">
+          <span>Сделать расклад</span>
+          <span class="btn-emoji">🃏</span>
+        </a>
+      </div>
+      <div class="hug-counter-box">
+        Наобнимались уже: <strong id="hugCount">0</strong> раз(а)
+        <span class="hug-status" id="hugStatus">✨ Нажми кнопку, чтобы зарядить любовь!</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="tarot-spread">
+      <div class="container">
+        <h2 class="section-title">🔮 Расклад на любовь: Данильчик + Ирочка</h2>
+        <p class="section-desc">Нажми на каждую карту, чтобы узнать всю правду (спойлер: там сплошная милота)</p>
+
+        <div class="spread-grid">
+          <div class="tarot-card" data-flipped="false" tabindex="0" role="button" aria-label="Перевернуть карту Прошлое">
+            <div class="tarot-card-inner">
+              <div class="tarot-front">
+                <div class="card-border">
+                  <span class="card-corner top-left">🌙</span>
+                  <span class="card-corner top-right">✨</span>
+                  <div class="card-emblem">🔮</div>
+                  <div class="card-label">ПРОШЛОЕ</div>
+                  <div class="card-hint">тыкни сюда</div>
+                  <span class="card-corner bottom-left">✨</span>
+                  <span class="card-corner bottom-right">🌙</span>
+                </div>
+              </div>
+              <div class="tarot-back">
+                <div class="card-border back-border">
+                  <div class="arcana-num">Аркан I</div>
+                  <div class="card-emoji">💘</div>
+                  <h3>Судьбоносный Мэтч</h3>
+                  <p>Вселенная долго тасовала колоду и наконец-то вытащила Данильчика прямо в ручки Ирочке.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tarot-card" data-flipped="false" tabindex="0" role="button" aria-label="Перевернуть карту Настоящее">
+            <div class="tarot-card-inner">
+              <div class="tarot-front">
+                <div class="card-border">
+                  <span class="card-corner top-left">☀️</span>
+                  <span class="card-corner top-right">💫</span>
+                  <div class="card-emblem">🃏</div>
+                  <div class="card-label">НАСТОЯЩЕЕ</div>
+                  <div class="card-hint">тыкни сюда</div>
+                  <span class="card-corner bottom-left">💫</span>
+                  <span class="card-corner bottom-right">☀️</span>
+                </div>
+              </div>
+              <div class="tarot-back">
+                <div class="card-border back-border">
+                  <div class="arcana-num">Аркан II</div>
+                  <div class="card-emoji">🧸</div>
+                  <h3>Тотальный Уют</h3>
+                  <p>Ирочка раскладывает таро и наводит красоту, Данильчик дарит тепло, смех и вкусняшки.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tarot-card" data-flipped="false" tabindex="0" role="button" aria-label="Перевернуть карту Будущее">
+            <div class="tarot-card-inner">
+              <div class="tarot-front">
+                <div class="card-border">
+                  <span class="card-corner top-left">⭐</span>
+                  <span class="card-corner top-right">💖</span>
+                  <div class="card-emblem">🌟</div>
+                  <div class="card-label">БУДУЩЕЕ</div>
+                  <div class="card-hint">тыкни сюда</div>
+                  <span class="card-corner bottom-left">💖</span>
+                  <span class="card-corner bottom-right">⭐</span>
+                </div>
+              </div>
+              <div class="tarot-back">
+                <div class="card-border back-border">
+                  <div class="arcana-num">Аркан III</div>
+                  <div class="card-emoji">♾️</div>
+                  <h3>Бесконечный Кайф</h3>
+                  <p>Миллион совместных приключений, поцелуев и ни одного ретроградного Меркурия на пути!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="oracle-box">
+          <div class="oracle-left">
+            <span class="mini-badge">✨ Карта дня для парочки</span>
+            <h2>Вытяни прикольное предсказание на сегодня</h2>
+            <p>Специальная авторская колода Ирочки, заряженная любовью Данильчика.</p>
+            <button class="btn btn-primary" id="drawCardBtn">
+              <span>Вытянуть карту</span>
+              <span class="btn-emoji">✨</span>
+            </button>
+          </div>
+          <div class="oracle-right">
+            <div class="daily-card" id="dailyCard">
+              <div class="daily-card-arcana" id="dailyArcana">Аркан Удачи</div>
+              <div class="daily-card-emoji" id="dailyEmoji">🔮</div>
+              <h3 class="daily-card-title" id="dailyTitle">Нажми «Вытянуть карту»</h3>
+              <p class="daily-card-text" id="dailyText">Колода уже перетасована и ждёт вашего запроса!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">💘 Оракул Совместимости</h2>
+        <p class="section-desc">Проверим, что говорят звёзды, кристаллы и здравый смысл</p>
+
+        <div class="meter-card">
+          <div class="meter-names">
+            <span>👦🏻 Данильчик</span>
+            <span class="meter-plus">+</span>
+            <span>🔮 Ирочка ТАРОшница</span>
+          </div>
+          <div class="meter-bar-wrap">
+            <div class="meter-bar" id="meterBar"></div>
+          </div>
+          <div class="meter-result" id="meterResult">Готовы узнать правду?</div>
+          <button class="btn btn-secondary" id="checkCompatBtn">
+            <span>Проверить совместимость</span>
+            <span class="btn-emoji">💫</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">📜 Секретные факты об этой паре</h2>
+        <div class="facts-grid">
+          <article class="fact-card">
+            <div class="fact-icon">🃏</div>
+            <h3>«Щас посмотрю на картах»</h3>
+            <p>Если Ирочка достала колоду — спорить бесполезно, карты уже всё подтвердили в пользу Данильчика и любви.</p>
+          </article>
+          <article class="fact-card">
+            <div class="fact-icon">🍕</div>
+            <h3>Дипломатия вкусняшек</h3>
+            <p>Любой вопрос решается быстрее, если рядом есть Данильчик, обнимашки и что-то очень вкусное.</p>
+          </article>
+          <article class="fact-card">
+            <div class="fact-icon">🌙</div>
+            <h3>Магия в каждом дне</h3>
+            <p>Даже обычный вечер превращается в маленький праздник, когда эти двое просто болтают и смеются вместе.</p>
+          </article>
+          <article class="fact-card">
+            <div class="fact-icon">💖</div>
+            <h3>Главный Аркан</h3>
+            <p>Никакой магии не нужно, чтобы видеть: Данильчик и Ирочка — самая милая команда во всей галактике.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-note">Сделано с любовью для Данильчика и Ирочки ТАРОшницы ✨</p>
+      <p class="footer-sub">Все арканы защищены магией обнимашек © 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
